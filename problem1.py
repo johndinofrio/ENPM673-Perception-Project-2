@@ -1,10 +1,8 @@
-# Project 1 for 673 - perception for autonomous robots
-# This program processes video files of different AR tags
+# Project 2 for 673
 
-import numpy as np
 import cv2 as cv
-from matplotlib import pyplot as plt
 import helpers
+from matplotlib import pyplot as plt
 
 video=cv.VideoCapture('./Videos/NightDrive-2689.mp4')
 
@@ -16,6 +14,9 @@ if playback not in [0,1]:
     exit(0)
 
 frame = helpers.frame()
+gamma = helpers.frame()
+hist = helpers.frame()
+chist = helpers.frame()
 while video.isOpened():
     # increment the frame number and print it
     print("Frame:",frame.increment_frame())
@@ -26,12 +27,28 @@ while video.isOpened():
     if grabbed == False:
         break
 
-    frame.resize(0.5)
-
+    frame.resize(0.3)
     cv.imshow("rezied src", frame.image)
-    frame.image = frame.adjust_gamma(2.0)
-    frame.smooth(3)
-    cv.imshow("gamma",frame.image)
+    gamma.image = frame.image.copy()
+    hist.image = frame.image.copy()
+    chist.image = frame.image.copy()
+
+
+    gamma.image = gamma.adjust_gamma(2.0)
+    # frame.smooth(3)
+    cv.imshow("gamma",gamma.image)
+
+    hist.image = cv.equalizeHist(cv.cvtColor(hist.image,cv.COLOR_BGR2GRAY))
+    cv.imshow("histogram",hist.image)
+
+    b, g, r = cv.split(chist.image)
+    red = cv.equalizeHist(r)
+    green = cv.equalizeHist(g)
+    blue = cv.equalizeHist(b)
+    chist.image = cv.merge((blue, green, red))
+
+    cv.imshow("color histogram",chist.image)
+
 
     key = cv.waitKey(playback) & 0xFF
     if key == 27 or key == ord("q"):
