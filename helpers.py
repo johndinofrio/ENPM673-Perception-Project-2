@@ -111,8 +111,34 @@ class frame:
                 subset = cv2.equalizeHist(subset)
                 self.image[hIncrement * x:hIncrement * (x + 1),wIncrement * y:wIncrement * (y + 1)] = subset[:,:]
 
-    # def equalizeRange(self, cuts):
-    #     #TODO
+    def equalizeRange(self, cuts=5):
+        histogram = np.histogram(self.image.ravel(), 256, [0, 256])
+        cutSize = 255/cuts
+        cutSize = int(cutSize)
+        finalLUT =[]
+        #print(histogram)
+
+        for cut in range(cuts):
+            temp = histogram[0][cut*cutSize:255 if (cut+1)*cutSize > 256 else (cut+1)*cutSize]
+            #print(temp)
+            total = sum(temp)
+            cumulation = []
+            for i in range(len(temp)):
+                i = int(i)
+                if i != 0:
+                    cumulation.append(cumulation[i-1]+temp[i])
+                elif i == 0:
+                    cumulation.append(temp[i])
+            for i in range(0,cutSize):
+                portion = cumulation[i]/total
+                finalLUT.append(int(portion*cutSize+(cutSize*cut)))
+        finalLUT.append(255)
+
+        for x in range(len(self.image[:])):
+            for y in range(len(self.image[x])):
+                value = self.image[x][y]
+                newValue=finalLUT[value]
+                self.image[x][y]=newValue
 
     def resize(self, scale):
         """Scales the image using open cv resize function based on the scale parameter.

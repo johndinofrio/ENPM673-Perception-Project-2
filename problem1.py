@@ -16,7 +16,6 @@ if playback not in [0,1]:
 
 frame = helpers.frame()
 gamma = helpers.frame()
-hist = helpers.frame()
 while video.isOpened():
     # increment the frame number and print it
     print("Frame:",frame.increment_frame())
@@ -30,46 +29,12 @@ while video.isOpened():
     frame.resize(0.3)
     cv.imshow("rezied src", frame.image)
     gamma.image = frame.image.copy()
-    hist.image = frame.image.copy()
 
 
     gamma.image, table = gamma.adjust_gamma(2.0)
     # frame.smooth(3)
 
     cv.imshow("gamma",gamma.image)
-
-    print(np.shape(hist.image))
-
-    # histogram = np.histogram(hist.image.ravel(),256,[0,256])
-    hist.image = cv.cvtColor(hist.image, cv.COLOR_RGB2GRAY)
-    hist.image = cv.equalizeHist(hist.image)
-    plt.hist(hist.image.ravel(),256,[0,256])
-    # #print(histogram)
-    plt.show()
-
-    cv.imshow("histogram",hist.image)
-
-    #hist.equalizeBins(4)
-    #cv.imshow("binned hist", hist.image)
-
-    # cum=[]
-    # for i in histogram[1]:
-    #     i = int(i)
-    #     if i != 0 and i <=255:
-    #         cum.append(cum[i-1]+histogram[0][i])
-    #     elif i == 0:
-    #         cum.append(histogram[0][i])
-    #
-    # hPrime = []
-    # for i in range(0,256):
-    #     port = cum[i]/cum[255]
-    #     hPrime.append(int(port*255))
-    # print(cum[255])
-    # display = []
-    # for r in range(256):
-    #     display.append([histogram[0][r], r, table[r], hPrime[r]])
-    #     print(display[r])
-
 
 
     key = cv.waitKey(playback) & 0xFF

@@ -56,25 +56,34 @@ The first approach we took to solve this problem was using the histogram equaliz
 		\caption{YCrCb Histogram Equalization}
 \end{figure}
 
-The consistent challenge we had using the built in histogram equalization is that we were getting a lot of noise in the image after equalizing. While it did make it slightly easier to see the lines on the road, the amount of noise in the image may make programmatically finding the lines on the road difficult. We were expecting results similar to what was shown in the class slides that brightened the image and exposed details that otherwise couldn't be seen, but instead got an image with so much noise it was hard to see anything in it. In analyzing the first frame of the video as a sample, we found that the first 25 intensity values on the grayscale image made up 90\% of the pixels in the image. Of those, there were 5 that represented 70\% of the image. Since such a large portion of the image was concentrated in such a narrow range, we can expect some pixelation to occur. This is specifically because each pixel value can only map to one new value, or in other words, we can't add more fidelity to the image than what is already there. That means, since 70\% of our image is populated by only 5 unique values, 70\% of our image, after equalization, will be made up of only 5 different intensity values, just further distributed across the full 8 bit intensity range. Because these values are so spread out, the image will look pixelated instead of smooth. We can do some smoothing after the fact but then some detail is lost in the lane markings we are trying to uncover.
+The consistent challenge we had using the built in histogram equalization is that we were getting a lot of noise in the image after equalizing. While it did make it slightly easier to see the lines on the road, the amount of noise in the image may make programmatically finding the lines on the road difficult. We were expecting results similar to what was shown in the class slides that brightened the image and exposed details that otherwise couldn't be seen, but instead got an image with so much noise it was hard to see anything in it. In analyzing the first frame of the video as a sample, we found that the first 25 intensity values on the grayscale image made up 90\% of the pixels in the image. Of those, there were 5 that represented 70\% of the image. Since such a large portion of the image was concentrated in such a narrow range, we can expect some pixelation to occur. This is specifically because each pixel value can only map to one new value, or in other words, we can't add more fidelity to the image than what is already there. That means, since 70\% of our image is populated by only 5 unique values, 70\% of our image, after equalization, will be made up of only 5 different intensity values, just further distributed across the full 8 bit intensity range. This result can be seen clearly by looking at the source and equalized histograms of the image below. Because these values are so spread out, the image looks pixelated instead of smooth. We can do some smoothing after the fact but then some detail is lost in the lane markings we are trying to uncover.
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width = 2in]{./images/grayHist.png}
+		\includegraphics[width = 4in]{./images/grayHist.png}
 	\end{center}
 		\caption{Source Grayscale Histogram}
 \end{figure}
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width = 2in]{./images/grayEqualizedHist.png}
+		\includegraphics[width = 4in]{./images/grayEqualizedHist.png}
 	\end{center}
 		\caption{Equalized Histogram}
 \end{figure}
 
-Through some searching we found another technique that adjusts the gamma of the image. We found this provided the best result. 
+Through some research and a desire to do better than what we got with the histogram equalization we were able to find another technique described that adjusts the "gamma" of the image. We found this method ultimately provided the best result of the methods we tested. Instead of trying to equalize the histogram, it maintains the same histogram shape but slides it to the right (increases) on the intensity value. Values starting with a lower intensity slide further to the right than those starting with a higher intensity value, which was also useful in this use case as we didn't want to over expose the light areas like the roads as it could ultimately wash out the lines as well. In effect, this increased the brightness of the overall image but maintains much of the same level of contrast from the source image. We were also able to maintain color correctness using this method as every color channel was adjusted at the same proportion, unlike when we equalized each color channel individually and merged them back together.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[width = 4in]{./images/gamma.png}
 	\end{center}
 		\caption{Gamma Adjustment}
 \end{figure}
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width = 4in]{./images/gammaHist.png}
+	\end{center}
+		\caption{Gamma Adjustment Histogram}
+\end{figure}
+\part*{Problem 2}
+\textbf{In this project we aim to do simple Lane Detection to mimic Lane Departure Warning systems used in Self Driving Cars. You are provided with two video sequences (both are required for this assignment), taken from a self driving car (click here to download). Your task will be to design an algorithm to detect lanes on the road, as well as estimate the road curvature to predict car turns.}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  7 MAR 2020 21:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 MAR 2020 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -272,45 +272,50 @@ File: ./images/yCrCb.png Graphic file (type png)
 <use ./images/yCrCb.png>
 Package pdftex.def Info: ./images/yCrCb.png  used on input line 54.
 (pdftex.def)             Requested size: 289.07999pt x 198.24013pt.
- [2 <./images/gray.png>]
-<./images/grayHist.png, id=21, 582.175pt x 431.6125pt>
+ [2 <./images/gray.png>] [3 <./images/color.png> <./images/yCrCb.png>]
+<./images/grayHist.png, id=26, 582.175pt x 431.6125pt>
 File: ./images/grayHist.png Graphic file (type png)
 <use ./images/grayHist.png>
-Package pdftex.def Info: ./images/grayHist.png  used on input line 62.
-(pdftex.def)             Requested size: 144.54pt x 107.15865pt.
- [3 <./images/color.png> <./images/yCrCb.png>]
+Package pdftex.def Info: ./images/grayHist.png  used on input line 63.
+(pdftex.def)             Requested size: 289.07999pt x 214.32388pt.
 <./images/grayEqualizedHist.png, id=27, 571.13374pt x 413.545pt>
 File: ./images/grayEqualizedHist.png Graphic file (type png)
 <use ./images/grayEqualizedHist.png>
-Package pdftex.def Info: ./images/grayEqualizedHist.png  used on input line 68.
+Package pdftex.def Info: ./images/grayEqualizedHist.png  used on input line 69.
 
-(pdftex.def)             Requested size: 144.54pt x 104.65433pt.
-<./images/gamma.png, id=28, 578.16pt x 392.46625pt>
+(pdftex.def)             Requested size: 289.07999pt x 209.31499pt.
+ [4 <./images/grayHist.png>]
+<./images/gamma.png, id=32, 578.16pt x 392.46625pt>
 File: ./images/gamma.png Graphic file (type png)
 <use ./images/gamma.png>
-Package pdftex.def Info: ./images/gamma.png  used on input line 76.
+Package pdftex.def Info: ./images/gamma.png  used on input line 77.
 (pdftex.def)             Requested size: 289.07999pt x 196.23264pt.
- [4 <./images/grayHist.png> <./images/grayEqualizedHist.png>] [5 <./images/gamm
-a.png>] (./report.aux) ) 
+<./images/gammaHist.png, id=33, 578.16pt x 423.5825pt>
+File: ./images/gammaHist.png Graphic file (type png)
+<use ./images/gammaHist.png>
+Package pdftex.def Info: ./images/gammaHist.png  used on input line 83.
+(pdftex.def)             Requested size: 289.07999pt x 211.79073pt.
+ [5 <./images/grayEqualizedHist.png>] [6 <./images/gamma.png> <./images/gammaHi
+st.png>] [7] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 4029 strings out of 492616
- 58791 string characters out of 6129482
+ 4034 strings out of 492616
+ 58911 string characters out of 6129482
  135435 words of memory out of 5000000
- 7897 multiletter control sequences out of 15000+600000
+ 7901 multiletter control sequences out of 15000+600000
  11671 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,6n,40p,1496b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-
-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm
--super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-s
-uper/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-sup
-er/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
-/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/s
-frm1728.pfb>
-Output written on report.pdf (5 pages, 2018898 bytes).
+ 42i,6n,40p,1594b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvip
+s/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/cm-super/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/c
+m-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-
+super/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-su
+per/sfrm1728.pfb>
+Output written on report.pdf (7 pages, 2030267 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
