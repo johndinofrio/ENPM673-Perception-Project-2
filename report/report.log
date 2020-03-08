@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  6 MAR 2020 23:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  7 MAR 2020 21:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -120,6 +120,30 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen114
+\captionmargin@=\dimen115
+\captionwidth=\dimen116
+\caption@tempdima=\dimen117
+\caption@indent=\dimen118
+\caption@parindent=\dimen119
+\caption@hangindent=\dimen120
+)
+\c@caption@flags=\count101
+\c@ContinuedFloat=\count102
+Package caption Info: float package is loaded.
+)
+\c@subfigure=\count103
+\c@subtable=\count104
+)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2019/05/04 3.31 The Babel package
 
@@ -131,11 +155,11 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2019/05/04 3.31 Babel common definitions
-\babel@savecnt=\count101
-\U@D=\dimen114
+\babel@savecnt=\count105
+\U@D=\dimen121
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count102
+\bbl@dirlevel=\count106
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -144,31 +168,31 @@ File: babel.def 2019/05/04 3.31 Babel common definitions
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen115
+\scratchcounter=\count107
+\scratchdimen=\dimen122
 \scratchbox=\box31
-\nofMPsegments=\count104
-\nofMParguments=\count105
+\nofMPsegments=\count108
+\nofMParguments=\count109
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen116
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen123
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -221,36 +245,72 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./images/gray.png, id=1, 579.16376pt x 393.47pt>
-File: ./images/gray.png Graphic file (type png)
-<use ./images/gray.png>
-Package pdftex.def Info: ./images/gray.png  used on input line 30.
-(pdftex.def)             Requested size: 501.87376pt x 462.72762pt.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+<./images/src.png, id=1, 575.14874pt x 394.47375pt>
+File: ./images/src.png Graphic file (type png)
+<use ./images/src.png>
+Package pdftex.def Info: ./images/src.png  used on input line 34.
+(pdftex.def)             Requested size: 289.07999pt x 198.27168pt.
 
 [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/gray.png>] (./report.aux) ) 
+s/src.png>]
+<./images/gray.png, id=14, 579.16376pt x 393.47pt>
+File: ./images/gray.png Graphic file (type png)
+<use ./images/gray.png>
+Package pdftex.def Info: ./images/gray.png  used on input line 42.
+(pdftex.def)             Requested size: 289.07999pt x 196.39229pt.
+<./images/color.png, id=15, 577.15625pt x 394.47375pt>
+File: ./images/color.png Graphic file (type png)
+<use ./images/color.png>
+Package pdftex.def Info: ./images/color.png  used on input line 48.
+(pdftex.def)             Requested size: 289.07999pt x 197.5855pt.
+<./images/yCrCb.png, id=16, 578.16pt x 396.48125pt>
+File: ./images/yCrCb.png Graphic file (type png)
+<use ./images/yCrCb.png>
+Package pdftex.def Info: ./images/yCrCb.png  used on input line 54.
+(pdftex.def)             Requested size: 289.07999pt x 198.24013pt.
+ [2 <./images/gray.png>]
+<./images/grayHist.png, id=21, 582.175pt x 431.6125pt>
+File: ./images/grayHist.png Graphic file (type png)
+<use ./images/grayHist.png>
+Package pdftex.def Info: ./images/grayHist.png  used on input line 62.
+(pdftex.def)             Requested size: 144.54pt x 107.15865pt.
+ [3 <./images/color.png> <./images/yCrCb.png>]
+<./images/grayEqualizedHist.png, id=27, 571.13374pt x 413.545pt>
+File: ./images/grayEqualizedHist.png Graphic file (type png)
+<use ./images/grayEqualizedHist.png>
+Package pdftex.def Info: ./images/grayEqualizedHist.png  used on input line 68.
+
+(pdftex.def)             Requested size: 144.54pt x 104.65433pt.
+<./images/gamma.png, id=28, 578.16pt x 392.46625pt>
+File: ./images/gamma.png Graphic file (type png)
+<use ./images/gamma.png>
+Package pdftex.def Info: ./images/gamma.png  used on input line 76.
+(pdftex.def)             Requested size: 289.07999pt x 196.23264pt.
+ [4 <./images/grayHist.png> <./images/grayEqualizedHist.png>] [5 <./images/gamm
+a.png>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 2858 strings out of 492616
- 37492 string characters out of 6129482
- 112672 words of memory out of 5000000
- 6738 multiletter control sequences out of 15000+600000
- 12437 words of font info for 33 fonts, out of 8000000 for 9000
+ 4029 strings out of 492616
+ 58791 string characters out of 6129482
+ 135435 words of memory out of 5000000
+ 7897 multiletter control sequences out of 15000+600000
+ 11671 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,26p,606b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvip
-s/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/publ
-ic/cm-super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
-/cm-super/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/c
-m-super/sfrm0500.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-
-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-su
-per/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm1728.pfb>
-Output written on report.pdf (1 page, 291907 bytes).
+ 42i,6n,40p,1496b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-
+super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm
+-super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-s
+uper/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super
+/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/s
+frm1728.pfb>
+Output written on report.pdf (5 pages, 2018898 bytes).
 PDF statistics:
- 36 PDF objects out of 1000 (max. 8388607)
- 24 compressed objects within 1 object stream
+ 56 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -88,9 +88,9 @@ class frame:
         invGamma = 1.0 / gamma
         table = np.array([((i / 255.0) ** invGamma) * 255
                           for i in np.arange(0, 256)]).astype("uint8")
-        #print(table)
+
         # apply gamma correction using the lookup table
-        return cv2.LUT(self.image, table)
+        return cv2.LUT(self.image, table), table
 
     def lowpass(self, bottom):
         """Take a bottom number. Every pixel below bottom will be set to 0 and every pixel above
@@ -100,6 +100,19 @@ class frame:
             gray = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
         ret, out = cv2.threshold(gray, bottom, 255, cv2.THRESH_BINARY)
 
+    def equalizeBins(self,cuts):
+        """self.image must already be B/W"""
+        h,w=np.shape(self.image)
+        hIncrement = int(h/cuts)
+        wIncrement = int(w/cuts)
+        for y in range(cuts):
+            for x in range(cuts):
+                subset = self.image[hIncrement*x:hIncrement*(x+1),wIncrement*y:wIncrement*(y+1)]
+                subset = cv2.equalizeHist(subset)
+                self.image[hIncrement * x:hIncrement * (x + 1),wIncrement * y:wIncrement * (y + 1)] = subset[:,:]
+
+    # def equalizeRange(self, cuts):
+    #     #TODO
 
     def resize(self, scale):
         """Scales the image using open cv resize function based on the scale parameter.

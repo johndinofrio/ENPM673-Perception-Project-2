@@ -1,5 +1,6 @@
 # Project 2 for 673
 
+import numpy as np
 import cv2 as cv
 import helpers
 from matplotlib import pyplot as plt
@@ -16,7 +17,6 @@ if playback not in [0,1]:
 frame = helpers.frame()
 gamma = helpers.frame()
 hist = helpers.frame()
-chist = helpers.frame()
 while video.isOpened():
     # increment the frame number and print it
     print("Frame:",frame.increment_frame())
@@ -31,23 +31,45 @@ while video.isOpened():
     cv.imshow("rezied src", frame.image)
     gamma.image = frame.image.copy()
     hist.image = frame.image.copy()
-    chist.image = frame.image.copy()
 
 
-    gamma.image = gamma.adjust_gamma(2.0)
+    gamma.image, table = gamma.adjust_gamma(2.0)
     # frame.smooth(3)
+
     cv.imshow("gamma",gamma.image)
 
-    hist.image = cv.equalizeHist(cv.cvtColor(hist.image,cv.COLOR_BGR2GRAY))
+    print(np.shape(hist.image))
+
+    # histogram = np.histogram(hist.image.ravel(),256,[0,256])
+    hist.image = cv.cvtColor(hist.image, cv.COLOR_RGB2GRAY)
+    hist.image = cv.equalizeHist(hist.image)
+    plt.hist(hist.image.ravel(),256,[0,256])
+    # #print(histogram)
+    plt.show()
+
     cv.imshow("histogram",hist.image)
 
-    b, g, r = cv.split(chist.image)
-    red = cv.equalizeHist(r)
-    green = cv.equalizeHist(g)
-    blue = cv.equalizeHist(b)
-    chist.image = cv.merge((blue, green, red))
+    #hist.equalizeBins(4)
+    #cv.imshow("binned hist", hist.image)
 
-    cv.imshow("color histogram",chist.image)
+    # cum=[]
+    # for i in histogram[1]:
+    #     i = int(i)
+    #     if i != 0 and i <=255:
+    #         cum.append(cum[i-1]+histogram[0][i])
+    #     elif i == 0:
+    #         cum.append(histogram[0][i])
+    #
+    # hPrime = []
+    # for i in range(0,256):
+    #     port = cum[i]/cum[255]
+    #     hPrime.append(int(port*255))
+    # print(cum[255])
+    # display = []
+    # for r in range(256):
+    #     display.append([histogram[0][r], r, table[r], hPrime[r]])
+    #     print(display[r])
+
 
 
     key = cv.waitKey(playback) & 0xFF
